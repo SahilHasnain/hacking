@@ -552,10 +552,9 @@ export default function Home() {
                 {/* HIGH Security Tests */}
                 {level === 'high' && (
                   <>
-                    <PayloadButton email="admin@example.com' OR email LIKE '%" password="x" className="bg-orange-900/30 hover:bg-orange-900/50 border border-orange-700" label="💉 LIKE Operator: admin@example.com' OR email LIKE '%" />
-                    <PayloadButton email="test@x.com' OR 1<2 OR email='" password="x" className="bg-orange-900/30 hover:bg-orange-900/50 border border-orange-700" label="💉 Comparison Operators: test@x.com' OR 1<2 OR email='" />
-                    <PayloadButton email="a@b.c' OR '1'='1' AND email LIKE '%" password="x" className="bg-orange-900/30 hover:bg-orange-900/50 border border-orange-700" label="💉 Complex Boolean: a@b.c' OR '1'='1' AND email LIKE '%" />
-                    <PayloadButton email="' OR 'a'='a" password="' OR 'a'='a" className="bg-gray-700 hover:bg-gray-600 opacity-60" label="❌ Blocked: Invalid Email Format" />
+                    <PayloadButton email="admin@example.com" password="' OR '1'='1" className="bg-orange-900/30 hover:bg-orange-900/50 border border-orange-700" label="💉 Password Injection: ' OR '1'='1" />
+                    <PayloadButton email="admin@example.com" password="' OR 1=1 OR ''='" className="bg-orange-900/30 hover:bg-orange-900/50 border border-orange-700" label="💉 Numeric OR: ' OR 1=1 OR ''='" />
+                    <PayloadButton email="admin@example.com" password="' OR 'x'='x" className="bg-orange-900/30 hover:bg-orange-900/50 border border-orange-700" label="💉 String Comparison: ' OR 'x'='x" />
                   </>
                 )}
 
